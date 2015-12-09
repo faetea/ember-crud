@@ -1,7 +1,3 @@
-<button {{action 'createPokemon'}}>CREATE</button>
-<button {{action 'updatePokemon'}}>UPDATE</button>
-<button {{action 'destroyPokemon'}}>DESTROY</button>
-
 <ul>
 {{#each model as |eachPokemon|}}
   {{pokemon-snippet pokemon=eachPokemon
@@ -10,3 +6,5 @@
   }}
 {{/each}}
 </ul>
+
+{{outlet}}

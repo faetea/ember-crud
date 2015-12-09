@@ -1,0 +1,12 @@
+<strong>#{{item.ID}} : {{item.name}}</strong>
+
+{{!-- <button {{action 'toggleExpanded'}}>
+  {{#unless isExpanded}}Info {{else}} Less{{/unless}}
+</button> --}}
+
+{{!-- {{#if isExpanded}} --}}
+  <p> Category: {{item.category}} </p>
+  <p> Effect: {{item.effect}} </p>
+  <button {{action 'toggleEditable'}}>Edit</button>
+  <button {{action 'destroyItem'}}>Delete</button>
+{{!-- {{/if}} --}}

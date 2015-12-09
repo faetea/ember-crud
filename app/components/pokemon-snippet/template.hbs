@@ -1,17 +1,25 @@
-<strong>#{{pokemon.nationalPokeNum}} : {{pokemon.name}}</strong>
+{{#unless isEditable}}  {{!-- non-editable version --}}
 
-<button {{action 'toggleExpanded'}}>
-  {{#unless isExpanded}}
-    EXPAND
-  {{else}}
-    COLLAPSE
-  {{/unless}}
-</button>
+  <strong>#{{pokemon.nationalPokeNum}} : {{pokemon.name}}</strong>
 
-{{#if isExpanded}}
-  <button {{action 'updatePokemon'}}>EDIT</button>
-  <button {{action 'destroyPokemon'}}>DELETE</button>
+  <button {{action 'toggleExpanded'}}>
+    {{#unless isExpanded}}Info {{else}} Less{{/unless}}
+  </button>
 
-  <p> Generation: {{pokemon.generation}} </p>
-  <p> Type: {{pokemon.typeOne}} {{#if twoTypes}}/ {{pokemon.typeTwo}}{{/if}} </p>
-{{/if}}
+  {{#if isExpanded}}
+    <p> Generation: {{pokemon.generation}} </p>
+    <p> Type: {{pokemon.typeOne}} {{#if twoTypes}}/ {{pokemon.typeTwo}}{{/if}} </p>
+    <button {{action 'toggleEditable'}}>Edit</button>
+    <button {{action 'destroyPokemon'}}>Delete</button>
+  {{/if}}
+
+{{else}}  {{!-- editable version --}}
+
+  <strong>#{{input valueBinding='pokemon.nationalPokeNum'}} : {{input valueBinding='pokemon.name'}}</strong>
+  <p> Generation: {{input valueBinding='pokemon.generation'}} </p>
+  <p> Type: {{input valueBinding='pokemon.typeOne'}} / {{input valueBinding='pokemon.typeTwo'}}</p>
+  <button {{action 'toggleExpanded'}}>Collapse</button>
+  <button {{action 'toggleEditable'}}>Confirm</button>
+  <button {{action 'destroyPokemon'}}>Delete</button>
+
+{{/unless}}  {{!-- end of isEditable --}}

@@ -5,8 +5,9 @@ export default Ember.Route.extend({
     return this.store.findAll('pokemon');
   },
   actions: {
-    createPokemon: function() {
+    createPokemon: function(newPokemon) {
       console.log('Route Action : createPokemon');
+      this.store.createRecord('pokemon', newPokemon).save();
     },
     updatePokemon: function() {
       console.log('Route Action : updatePokemon');

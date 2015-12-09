@@ -1,5 +1,9 @@
+<button {{action 'createPokemon'}}>CREATE</button>
+<button {{action 'updatePokemon'}}>UPDATE</button>
+<button {{action 'destroyPokemon'}}>DESTROY</button>
+
 <ul>
 {{#each model as |eachPokemon|}}
-  {{pokemon-snippet pokemon=eachPokemon}}
+  {{pokemon-snippet pokemon=eachPokemon routeUpdatePokemon='updatePokemon' }}
 {{/each}}
 </ul>

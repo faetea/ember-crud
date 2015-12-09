@@ -3,5 +3,16 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model: function(){
     return this.store.findAll('pokemon');
+  },
+  actions: {
+    createPokemon: function(){
+      console.log('Route Action : createPokemon');
+    },
+    updatePokemon: function(){
+      console.log('Route Action : updatePokemon');
+    },
+    destroyPokemon: function(){
+      console.log('Route Action : destroyPokemon');
+    }
   }
 });

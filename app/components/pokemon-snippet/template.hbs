@@ -1,5 +1,17 @@
 <strong>#{{pokemon.nationalPokeNum}} : {{pokemon.name}}</strong>
-<button {{action 'updatePokemon'}}>EDIT</button>
-<button {{action 'destroyPokemon'}}>DELETE</button>
-<p> Generation: {{pokemon.generation}} </p>
-<p> Type: {{pokemon.typeOne}} {{#if twoTypes}}/ {{pokemon.typeTwo}}{{/if}} </p>
+
+<button {{action 'toggleExpanded'}}>
+  {{#unless isExpanded}}
+    EXPAND
+  {{else}}
+    COLLAPSE
+  {{/unless}}
+</button>
+
+{{#if isExpanded}}
+  <button {{action 'updatePokemon'}}>EDIT</button>
+  <button {{action 'destroyPokemon'}}>DELETE</button>
+
+  <p> Generation: {{pokemon.generation}} </p>
+  <p> Type: {{pokemon.typeOne}} {{#if twoTypes}}/ {{pokemon.typeTwo}}{{/if}} </p>
+{{/if}}

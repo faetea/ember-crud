@@ -5,14 +5,18 @@ export default Ember.Component.extend({
   twoTypes: Ember.computed('pokemon.typeOne', 'pokemon.typeTwo', function(){
     return this.get('pokemon.typeTwo') && this.get('pokemon.typeTwo') !== this.get('pokemon.typeOne');
   }),
+  isExpanded: false,
   actions: {
-    updatePokemon: function(){
+    toggleExpanded: function() {
+      this.toggleProperty('isExpanded');
+    },
+    updatePokemon: function() {
       console.log('Component Action : updatePokemon');
       this.sendAction('routeUpdatePokemon');
     },
-    destroyPokemon: function(){
+    destroyPokemon: function() {
       console.log('Component Action : destroyPokemon');
-      this.sendAction('routeDestroyPokemon');
+      this.sendAction('routeDestroyPokemon', this.get('pokemon'));
     }
   } // end actions
 });

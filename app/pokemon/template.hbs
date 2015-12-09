@@ -4,6 +4,9 @@
 
 <ul>
 {{#each model as |eachPokemon|}}
-  {{pokemon-snippet pokemon=eachPokemon routeUpdatePokemon='updatePokemon' routeDestroyPokemon='destroyPokemon'}}
+  {{pokemon-snippet pokemon=eachPokemon
+    routeUpdatePokemon='updatePokemon'
+    routeDestroyPokemon='destroyPokemon'
+  }}
 {{/each}}
 </ul>

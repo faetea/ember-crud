@@ -8,3 +8,9 @@ export default Ember.Component.extend({
     },
   } // end actions
 }); // end ember.component.extend
+
+
+// button class expand has action toggleExpanded
+// when user clicks on toggle.
+// close all toggles.
+// then open specified toggle.

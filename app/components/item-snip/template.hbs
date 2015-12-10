@@ -1,12 +1,12 @@
-<strong>#{{item.ID}} : {{item.name}}</strong>
-
-<button {{action 'toggleExpanded'}}>
-  {{#unless isExpanded}}Info {{else}} Less{{/unless}}
-</button>
+<h4>№ {{item.id}} : {{item.name}}
+  <button {{action 'toggleExpanded'}}>
+    {{#unless isExpanded}}Info {{else}} Less{{/unless}}
+  </button>
+</h4>
 
 {{#if isExpanded}}
-  <p> Category: {{item.category}} </p>
-  <p> Effect: {{item.effect}} </p>
-  <button {{action 'toggleEditable'}}>Edit</button>
-  <button {{action 'destroyPokemon'}}>Delete</button>
+  <ul>
+    <li> Category: {{item.category}} </li>
+    <li> Effect: {{item.effect}} </li>
+  </ul>
 {{/if}}

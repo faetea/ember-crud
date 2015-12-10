@@ -1,35 +1,40 @@
 {{#unless isEditable}}  {{!-- non-editable version --}}
 
-  <strong>№ {{pokemon.nationalPokeNum}} : {{pokemon.name}}</strong>
-  <button {{action 'toggleExpanded'}}>
-    {{#unless isExpanded}}Info {{else}} Less{{/unless}}
-  </button>
-
+  <h4>№ {{pokemon.nationalPokeNum}} : {{pokemon.name}}
+    <button {{action 'toggleExpanded'}}>
+      {{#unless isExpanded}}Info {{else}} Less{{/unless}}
+    </button>
+  </h4>
   {{#if isExpanded}}
-    <p> Type: {{pokemon.typeOne}} {{#if twoTypes}}/ {{pokemon.typeTwo}}{{/if}} </p>
-    <p> Species: {{pokemon.species}} </p>
-    <p> Height: {{pokemon.height}} m</p>
-    <p> Weight: {{pokemon.weight}} kg </p>
-    <p> Abilities: {{pokemon.abilityOne}} {{#if twoAbilities}}/ {{pokemon.abilityTwo}}{{/if}} </p>
-    <p> Generation: {{pokemon.generation}} </p>
-
+  <ul>
+    <li> Type: {{pokemon.typeOne}} {{#if twoTypes}}/ {{pokemon.typeTwo}}{{/if}} </li>
+    <li> Species: {{pokemon.species}} </li>
+    <li> Height: {{pokemon.height}} m</li>
+    <li> Weight: {{pokemon.weight}} kg </li>
+    <li> Abilities: {{pokemon.abilityOne}}
+      {{#if twoAbilities}}/ {{pokemon.abilityTwo}}{{/if}} </li>
+    <li> Generation: {{pokemon.generation}} </li>
+  </ul>
+  <p>
     <button {{action 'toggleEditable'}}>Edit</button>
     <button {{action 'destroyPokemon'}}>Delete</button>
+  </p>
   {{/if}}
 
 {{else}}  {{!-- editable version --}}
 
-  <strong>№ {{input valueBinding='pokemon.nationalPokeNum'}} : {{input valueBinding='pokemon.name'}}</strong>
-
-  <p> Type: {{input valueBinding='pokemon.typeOne'}} {{#if twoTypes}}/ {{input valueBinding='pokemon.typeTwo'}}{{/if}} </p>
-  <p> Species: {{input valueBinding='pokemon.species'}} </p>
-  <p> Height: {{input valueBinding='pokemon.height'}} m</p>
-  <p> Weight: {{input valueBinding='pokemon.weight'}} kg </p>
-  <p> Abilities: {{input valueBinding='pokemon.abilityOne'}} {{#if twoAbilities}}/ {{input valueBinding='pokemon.abilityTwo'}}{{/if}} </p>
-  <p> Generation: {{input valueBinding='pokemon.generation'}} </p>
-
-  <button {{action 'toggleExpanded'}}>Collapse</button>
-  <button {{action 'toggleEditable'}}>Confirm</button>
-  <button {{action 'destroyPokemon'}}>Delete</button>
-
+  <h4>№ {{input valueBinding='pokemon.nationalPokeNum'}} : {{input valueBinding='pokemon.name'}}</h4>
+  <ul>
+    <li> Type: {{input valueBinding='pokemon.typeOne'}} {{#if twoTypes}}/ {{input valueBinding='pokemon.typeTwo'}}{{/if}} </li>
+    <li> Species: {{input valueBinding='pokemon.species'}} </li>
+    <li> Height: {{input valueBinding='pokemon.height'}} m</li>
+    <li> Weight: {{input valueBinding='pokemon.weight'}} kg </li>
+    <li> Abilities: {{input valueBinding='pokemon.abilityOne'}} {{#if twoAbilities}}/ {{input valueBinding='pokemon.abilityTwo'}}{{/if}} </li>
+    <li> Generation: {{input valueBinding='pokemon.generation'}} </li>
+  </ul>
+  <p>
+    <button {{action 'toggleEditable'}}>Confirm</button>
+    <button {{action 'destroyPokemon'}}>Delete</button>
+    <button {{action 'toggleExpanded'}}>Less</button>
+  </p>
 {{/unless}}  {{!-- end of isEditable --}}

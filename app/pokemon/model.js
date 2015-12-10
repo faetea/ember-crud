@@ -6,7 +6,6 @@ export default DS.Model.extend({
   typeOne: DS.attr('string'),
   typeTwo: DS.attr('string'),
   generation: DS.attr('number'),
-
   species: DS.attr('string'),
   height: DS.attr('number'),
   weight: DS.attr('number'),

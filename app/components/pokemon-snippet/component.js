@@ -5,6 +5,9 @@ export default Ember.Component.extend({
   twoTypes: Ember.computed('pokemon.typeOne', 'pokemon.typeTwo', function(){
     return this.get('pokemon.typeTwo') && this.get('pokemon.typeTwo') !== this.get('pokemon.typeOne');
   }),
+  twoAbilities: Ember.computed('pokemon.abilityOne', 'pokemon.abilityTwo', function(){
+    return this.get('pokemon.abilityTwo') && this.get('pokemon.abilityTwo') !== this.get('pokemon.abilityOne');
+  }),
   isExpanded: false,
   isEditable: false,
   actions: {

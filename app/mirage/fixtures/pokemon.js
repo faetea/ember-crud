@@ -70,5 +70,27 @@ export default [
     typeOne: 'WATER',
     typeTwo: '',
     generation: 1
+  },
+  {
+    id: 16,
+    nationalPokeNum: '016',
+    name: 'Pidgey',
+    typeOne: 'NORMAL',
+    typeTwo: 'FLYING',
+    generation: 1,
+
+    species: 'Tiny Bird Pokémon',
+    height: 0.30,
+    weight: 1.8,
+    abilityOne: 'Keen Eye',
+    abilityTwo: 'Tangled Feet',
+
+    total: 251,
+    HP: 40,
+    attack: 45,
+    defense: 40,
+    spAtk: 35,
+    spDef: 35,
+    speed: 56,
   }
 ];

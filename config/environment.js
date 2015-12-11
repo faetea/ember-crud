@@ -16,16 +16,10 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    sassOptions: {
+      includePaths: ['bower_components/materialize/sass']
     }
-  };
-
-  ENV.contentSecurityPolicy = {
-    'default-src': "'none'",
-    'script-src': "'self'",
-    'font-src': "'self' fonts.gstatic.com",
-    'connect-src': "'self'",
-    'img-src': "'self' data:",
-    'media-src': "'self'"
   };
 
   if (environment === 'development') {

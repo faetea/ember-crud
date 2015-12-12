@@ -1,0 +1,13 @@
+<ul>
+  <li> Type: {{pokemon.typeOne}} {{#if twoTypes}}/ {{pokemon.typeTwo}}{{/if}} </li>
+  <li> Species: {{pokemon.species}} </li>
+  <li> Height: {{pokemon.height}} m</li>
+  <li> Weight: {{pokemon.weight}} kg </li>
+  <li> Abilities: {{pokemon.abilityOne}}
+    {{#if twoAbilities}}/ {{pokemon.abilityTwo}}{{/if}} </li>
+  <li> Generation: {{pokemon.generation}} </li>
+  <li>
+    <button {{action 'toggleEditable'}}>Edit</button>
+    <button {{action 'destroyPokemon'}}>Delete</button>
+  </li>
+</ul>

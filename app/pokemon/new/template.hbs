@@ -1,18 +1,32 @@
-<h5> Add a Pokemon to the directory! </h5>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card cyan lighten-5">
+      <div class="card-content">
+        <span class="card-title">Add a new Pokemon</span>
+        <div class="row">
+          {{md-input label='Name' valueBinding='view.newPokemon.name' type="text" class="col s12" validate=true}}
+          {{md-input label='National №' valueBinding='view.newPokemon.nationalPokeNum' type="text" class="col s12" validate=true}}
 
-{{input placeholder='National Pokemon Number'
-        valueBinding='view.newPokemon.nationalPokeNum'}}
-{{input placeholder='Name'
-        valueBinding='view.newPokemon.name'}}
-{{input placeholder='Type One'
-        valueBinding='view.newPokemon.typeOne'}}
-{{input placeholder='Type Two'
-        valueBinding='view.newPokemon.typeTwo'}}
-{{input placeholder='Generation'
-        valueBinding='view.newPokemon.generation'}}
+          {{md-input label='Height' valueBinding='view.newPokemon.height' type="number" class="col s12" validate=true}}
+          {{md-input label='Weight' valueBinding='view.newPokemon.weight' type="number" class="col s12" validate=true}}
 
-<button {{action 'createPokemon' view.newPokemon}}> Add New </button>
+          {{md-input label='Ability One' valueBinding='view.newPokemon.abilityOne' type="text" class="col s12" validate=true}}
+          {{md-input label='Ability Two' valueBinding='view.newPokemon.abilityTwo' type="text" class="col s12" validate=true}}
 
-{{#link-to 'pokemon' tagName='button'}}Cancel{{/link-to}}
+          {{md-input label='Species' valueBinding='view.newPokemon.species' type="text" class="col s12" validate=true}}
+          {{md-input label='Generation' valueBinding='view.newPokemon.generation' type="number" class="col s12" validate=true}}
 
-<p>{{view.newPokemon.name}}</p>
+          {{md-input label='Type One' valueBinding='view.newPokemon.typeOne' type="text" class="col s12" validate=true}}
+          {{md-input label='Type Two' valueBinding='view.newPokemon.typeTwo' type="text" class="col s12" validate=true}}
+        </div>
+
+      </div>
+      <div class="card-action">
+
+        <button class="btn waves-effect waves-light" type="submit" name="action" {{action 'createPokemon' view.newPokemon}}>Add New</button>
+        {{#link-to 'pokemon' tagName='button' class="btn waves-effect waves-light"}}Cancel{{/link-to}}
+
+      </div>
+    </div>
+  </div>
+</div>

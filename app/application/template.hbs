@@ -1,3 +1,23 @@
-{{#link-to 'index' tagName='h1'}} POKEDEX {{/link-to}}
+<body class="indigo lighten-4">
+{{#md-navbar name='POKEDEX' class='indigo darken-3'}}
+  <!-- A workaround to get the "active" class to apply to the active <li> automatically -->
+  {{#link-to 'pokemon' tagName='li'}}
+    {{link-to 'Pokemon' 'pokemon'}}
+  {{/link-to}}
+  {{#link-to 'items' tagName='li'}}
+    {{link-to 'Items' 'items'}}
+  {{/link-to}}
+{{/md-navbar}}
 
 {{outlet}}
+
+<footer class='page-footer indigo white-text'>
+    {{#md-copyright text='Copyright Text'
+        startYear=2014
+        class='indigo darken-3 white-text'}}
+        <a class="white-text right" href="#!">
+          More Links
+        </a>
+    {{/md-copyright}}
+</footer>
+</body>

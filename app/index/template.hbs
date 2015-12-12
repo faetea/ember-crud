@@ -1,4 +1,14 @@
-<p>Welcome to the Pokedex, you own personal Pokemon directory!</p>
-
-{{#link-to 'pokemon' tagName='button'}} See your Pokemon {{/link-to}}
-{{#link-to 'items' tagName='button'}} See your Items {{/link-to}}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue lighten-5">
+      <div class="card-content">
+        <span class="card-title">Welcome</span>
+        <p>This is your Pokedex, your own personal Pokemon directory!</p>
+      </div>
+      <div class="card-action">
+      {{#link-to 'pokemon' tagName='button' class="btn waves-effect waves-light blue accent-2"}}Pokemon{{/link-to}}
+      {{#link-to 'items' tagName='button' class="btn waves-effect waves-light blue accent-2"}}Items{{/link-to}}
+      </div>
+    </div>
+  </div>
+</div>
